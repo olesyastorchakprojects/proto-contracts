@@ -1,0 +1,14 @@
+
+syntax = "proto3";
+package backend.v1;
+import "common/v1/common.proto";
+
+service BackendService {
+  rpc ListUsers (ListUsersRequest) returns (ListUsersResponse);
+}
+
+message ListUsersRequest  { common.v1.PageRequest  page = 1; }
+message ListUsersResponse {
+  repeated common.v1.User users = 1;
+  common.v1.PageResponse   page = 2;
+}

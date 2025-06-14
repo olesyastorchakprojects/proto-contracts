@@ -1,0 +1,17 @@
+syntax = "proto3";
+package registry.v1;
+
+service RegistryService {
+  rpc Register   (RegistryServiceRegisterRequest) returns (RegistryServiceRegisterResponse);
+  rpc Heartbeat  (stream RegistryServiceHeartbeatRequest) returns (RegistryServiceHeartbeatResponse);
+}
+
+message RegistryServiceRegisterRequest { string backend_id = 1; string addr = 2; }
+
+message RegistryServiceHeartbeatRequest {
+  string backend_id = 1;
+  uint64 unix_ts_ms = 2;
+}
+
+message RegistryServiceRegisterResponse {}
+message RegistryServiceHeartbeatResponse {}

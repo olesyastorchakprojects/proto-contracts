@@ -1,0 +1,12 @@
+syntax = "proto3";
+package common.v1;
+
+message User {
+  string id   = 1;
+  string email = 3;
+}
+
+message PageRequest  { uint32 page_size = 1; string page_token = 2; }
+message PageResponse { string next_page_token = 1; }
+
+
