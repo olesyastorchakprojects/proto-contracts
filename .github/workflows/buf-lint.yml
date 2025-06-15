@@ -3,10 +3,14 @@ name: Buf Lint
 on:
   push:
     paths:
-      - 'proto/**/*.proto'
+      - 'backend/**/*.proto'
+      - 'common/**/*.proto'
+      - 'registry/**/*.proto'
   pull_request:
     paths:
-      - 'proto/**/*.proto'
+      - 'backend/**/*.proto'
+      - 'common/**/*.proto'
+      - 'registry/**/*.proto'
 
 jobs:
   lint:
@@ -18,4 +22,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - uses: bufbuild/buf-lint-action@v1
         with:
-          input: proto
+          input: .
