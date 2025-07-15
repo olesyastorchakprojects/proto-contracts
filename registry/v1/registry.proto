@@ -6,7 +6,7 @@ service RegistryService {
   rpc Heartbeat  (stream RegistryServiceHeartbeatRequest) returns (RegistryServiceHeartbeatResponse);
 }
 
-message RegistryServiceRegisterRequest { string backend_id = 1; string addr = 2; }
+message RegistryServiceRegisterRequest { string backend_id = 1; string grpc_endpoint = 2; string rest_endpoint = 3; }
 
 message RegistryServiceHeartbeatRequest {
   string backend_id = 1;
