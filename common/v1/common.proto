@@ -3,6 +3,7 @@ package common.v1;
 
 message User {
   string id   = 1;
+  string role = 2;
   string email = 3;
 }
 
